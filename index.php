@@ -19,6 +19,7 @@ try {
     if ($e->getCode() === 404) {
         http_response_code(404);
     }
+    http_response_code(500);
     // logs
 }
 
