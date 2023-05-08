@@ -6,7 +6,7 @@ use App\Contracts\Response;
 
 class JsonResponse implements Response
 {
-    public function __construct(private $data, private int $code = 200)
+    public function __construct(public $data, public int $code = 200)
     {
     }
 
