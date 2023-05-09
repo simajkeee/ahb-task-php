@@ -1,12 +1,12 @@
 <?php
+require 'setup.php';
+require 'vendor/autoload.php';
+require 'routes.php';
 
 use App\Contracts\Response;
 use App\Http\Response as HttpResponse;
 use App\Http\ResponseDispatcher;
 
-require 'vendor/autoload.php';
-require 'setup.php';
-require 'routes.php';
 
 $dispatcher = new ResponseDispatcher();
 

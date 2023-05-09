@@ -1,11 +1,10 @@
 <?php
 $configHeader = require('./config/headers.php');
 
-if ($_SERVER['CONTENT_TYPE'] === 'application/json') {
+if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] === 'application/json') {
     $configHeader = array_merge($configHeader, ['Content-Type' => 'application/json']);
 }
 
 foreach ($configHeader as $header => $value) {
-    $parsedHeader = sprintf("%s: %s", $header, $value);
-    header($parsedHeader);
+    header(sprintf("%s: %s", $header, $value));
 }
