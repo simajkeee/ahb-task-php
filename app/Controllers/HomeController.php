@@ -8,4 +8,9 @@ class HomeController
     {
         return "Test";
     }
+
+    public function upload()
+    {
+        return "Upload";
+    }
 }
