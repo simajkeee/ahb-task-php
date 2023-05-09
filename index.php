@@ -5,6 +5,7 @@ use App\Http\Response as HttpResponse;
 use App\Http\ResponseDispatcher;
 
 require 'vendor/autoload.php';
+require 'setup.php';
 require 'routes.php';
 
 $dispatcher = new ResponseDispatcher();
