@@ -58,7 +58,7 @@ class CSVParser
             foreach ($this->parseRow($splitLine) as $readItem) {
                 $row = array_merge($row, $readItem);
             }
-//            $row = array_map(fn($item) => strip_tags($item), $row);
+            $row = array_map(fn($item) => strip_tags($item), $row);
             $start++;
             $file->next();
             yield $row;
