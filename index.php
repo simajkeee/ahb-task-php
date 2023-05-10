@@ -21,6 +21,6 @@ try {
         http_response_code(404);
     }
     http_response_code(500);
-    // logs
+    echo $e->getMessage();
 }
 
