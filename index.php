@@ -11,8 +11,6 @@ use App\Http\ResponseDispatcher;
 $dispatcher = new ResponseDispatcher();
 
 try {
-    var_dump($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
-    exit();
     $response = $router->match($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
     if (!($response instanceof Response)) {
         $response = new HttpResponse($response);
