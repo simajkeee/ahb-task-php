@@ -36,7 +36,7 @@ class CSVParser
         foreach ($line as $spLine) {
             if ($spLine === "") {
                 yield (array)$spLine;
-            } else if (preg_match('/\"(.*)\"/', $spLine, $matches)) {
+            } else if (preg_match('/^\"(.*)\"$/', $spLine, $matches)) {
                 yield (array)$matches[1];
             } else {
                 yield explode(';', $spLine);
@@ -58,6 +58,7 @@ class CSVParser
             foreach ($this->parseRow($splitLine) as $readItem) {
                 $row = array_merge($row, $readItem);
             }
+            $row = array_map(fn($item) => strip_tags($item), $row);
             $start++;
             $file->next();
             yield $row;
